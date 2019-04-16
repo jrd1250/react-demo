@@ -20,7 +20,7 @@ To see how Forms and Tables work in React-Bootstrap, as well as how state can be
 
 ## Step 4: Authentication
 
-Auth0 allows for quick and easy authentication for React apps. Credit for this section and the classes referenced goes to [this tutorial](https://medium.appbase.io/how-to-implement-authentication-for-your-react-app-cf09eef3bb0b). The [auth0](src/auth0.js) class provides an interface to auth0 and handles the direct authentication. The login() and logout() methods will later be wrapped to perform the actual authentication.
+Auth0 allows for quick and easy authentication for React apps. Credit for this section and the classes referenced goes to [this tutorial](https://medium.appbase.io/how-to-implement-authentication-for-your-react-app-cf09eef3bb0b). The [Auth](src/Auth.js) class provides an interface to auth0 and handles the direct authentication. The login() and logout() methods will later be wrapped to perform the actual authentication.
 
 ## Step 5: Putting It All Together
 
