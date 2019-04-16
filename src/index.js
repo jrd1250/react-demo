@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Route, Router} from 'react-router-dom'
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './App.js';
+import Dashboard from './Dashboard';
+import history from './History';
+import Auth from "./Auth";
+import Callback from "./Callback";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const auth = new Auth();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const handleAuthentication = (nextState, replace) => {
+    if (/access_token|id_token|error/.test(nextState.location.hash)) {
+        auth.handleAuthentication();
+    }
+}
+
+const routing = (
+    <Router history={history} component={App}>
+        <div>
+            <Route exact path='/' render={(props) => <App auth={auth} />} />
+            <Route path='/home' render={(props) => <App auth={auth} />} />
+            <Route path='/dashboard' render={(props) => <Dashboard auth={auth} />} />
+            <Route path='/callback' render={(props) => {
+                handleAuthentication(props);
+                return <Callback auth={auth} />
+            }} />
+        </div>
+    </Router>
+);
+
+
+ReactDOM.render(routing, document.getElementById('root'));
