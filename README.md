@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This demo will walk you through the funtionality of a simple app using React. This tutorial will demonstratea several simple UI features, routing, and authentication.
 
-## Available Scripts
+## Part 0: Before You Start
 
-In the project directory, you can run:
+Make sure you have a browser extension installed that allows you to inspect React components and view their attributes in your browser. If you're using chrome, [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) works well for this.
 
-### `npm start`
+Now, run `npm start` in the project directory to run the app. Verify that it's running at localhost:3000. This will allow you to check out each component of the app as you walk through it in the tutorial.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Part 1: Components
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+To start things off, we'll see how the app home works, which provides a great example of how React allows you to use components to modularize your webpage design and apply OOP concepts. Take a look at [App.js](App.js) and [SpinImage.js](SpinImage.js) to see how this is done.
 
-### `npm test`
+## Step 2: Routing
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Now, let's take a look at how React does routing to link paths to each component. Check out [index.js](index.js) to see how the Router works in React.
 
-### `npm run build`
+## Step 3: UI Elements and State
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To see how Forms and Tables work in React-Bootstrap, as well as how state can be used to dynamically control components at runtime, check out [Dashboard.js](Dashboard.js), and play around with the form in your browser. Make sure to inspect the page and look at how the Dashboard component's state changes.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Step 4: Authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Auth0 allows for quick and easy authentication for React apps. Credit for this section and the classes referenced goes to [this tutorial](https://medium.appbase.io/how-to-implement-authentication-for-your-react-app-cf09eef3bb0b). The [auth0](auth0.js) class provides an interface to auth0 and handles the direct authentication. The login() and logout() methods will later be wrapped to perform the actual authentication.
 
-### `npm run eject`
+## Step 5: Putting It All Together
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Now that you understand how authentication works, take a look back through the rest of the classes and see how the authentication is passed down from [index.js](index.js) to each of the other components.
